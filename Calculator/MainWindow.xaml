@@ -1,0 +1,74 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="Calc .NET" Height="250" Width="250" MinWidth="250" MinHeight="250" WindowStartupLocation="CenterScreen" Background="LightSlateGray"  >
+    <!--KeyDown="Window_KeyDown"!-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="15"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="15"></ColumnDefinition>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="5"/>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="15"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Grid.ColumnSpan="11">
+            <MenuItem Header="_Calculator">
+                <MenuItem Header="_About" Click="MenuAbout_Click" />
+                <Separator />
+                <MenuItem Header="E_xit" Click="MenuExit_Click" />
+            </MenuItem>
+        </Menu>
+
+        <TextBox x:Name="textBox" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="(press CE to start)" IsReadOnly="False" Grid.ColumnSpan="9" Background="LightSlateGray" Foreground="Black" PreviewTextInput="NumberValidationTextBox" />
+
+        <Button x:Name="button0" Content="0"  Grid.Row="10" Grid.Column="3" Click="Digit_Click"/>
+        <Button x:Name="button1" Content="1"  Grid.Row="4" Grid.Column="1" Click="Digit_Click"/>
+        <Button x:Name="button2" Content="2"  Grid.Row="4" Grid.Column="3" Click="Digit_Click"/>
+        <Button x:Name="button3" Content="3"  Grid.Row="4" Grid.Column="5" Click="Digit_Click"/>
+        <Button x:Name="button4" Content="4"  Grid.Row="6" Grid.Column="1" Click="Digit_Click"/>
+        <Button x:Name="button5" Content="5"  Grid.Row="6" Grid.Column="3" Click="Digit_Click"/>
+        <Button x:Name="button6" Content="6"  Grid.Row="6" Grid.Column="5" Click="Digit_Click"/>
+        <Button x:Name="button7" Content="7"  Grid.Row="8" Grid.Column="1" Click="Digit_Click"/>
+        <Button x:Name="button8" Content="8"  Grid.Row="8" Grid.Column="3" Click="Digit_Click"/>
+        <Button x:Name="button9" Content="9"  Grid.Row="8" Grid.Column="5" Click="Digit_Click"/>
+        <Button x:Name="button_equal" Content="=" Grid.Row="10" Grid.Column="5" Click="Equal"/>
+        <Button x:Name="button_clear" Content="CE" Grid.Row="10" Grid.Column="1" Click="Clear"/>
+
+        <Button x:Name="button_plus" Content="+" Grid.Row="4" Grid.Column="7" Click="Operation_Click"/>
+        <Button x:Name="button_minus" Content="-" Grid.Row="6" Grid.Column="7" Click="Operation_Click" />
+        <Button x:Name="button_multiply" Content="*"  Grid.Row="8" Grid.Column="7" Click="Operation_Click"/>
+        <Button x:Name="button_divide" Content="/" Grid.Row="10" Grid.Column="7" Click="Operation_Click"/>
+
+        <Button x:Name="button_power" Content="^" Grid.Row="4" Grid.Column="9" Click="Operation_Click" />
+        <Button x:Name="button_root" Content="√2" Grid.Row="6" Grid.Column="9" Click="Operation_Click"/>
+        <Button x:Name="button_onexth" Content="1/x" Grid.Row="8" Grid.Column="9" Click="Operation_Click" />
+        <Button x:Name="button_percent" Content="%" Grid.Row="10" Grid.Column="9" Click="Operation_Click" />
+
+    </Grid>
+</Window>
