@@ -1,0 +1,23 @@
+name: Windows
+
+# Controls when the action will run. Triggers the workflow on push or pull request 
+# events but only for the master branch
+on: [push, pull_request]
+
+jobs:
+  Build:
+    runs-on: [windows-latest]
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+
+    - name: Restore NuGet packages
+      run: nuget restore Calculator.sln
+
+    - name: Build the Solution
+      run: msbuild Calculator.sln /p:Configuration=Release
