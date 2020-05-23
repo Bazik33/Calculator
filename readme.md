@@ -1,5 +1,6 @@
 # Calculator
 
+![Windows](https://github.com/Bazik33/Calculator/workflows/Windows/badge.svg) <br />
 A simple .NET Calculator, and by the way my first WPF Project :)
 
 # How to run it
